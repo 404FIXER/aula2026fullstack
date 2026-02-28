@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function Home() {
   const currentYear = new Date().getFullYear()
@@ -41,9 +42,12 @@ export default function Home() {
             A plataforma completa para organizadores gerenciarem lotes, vendas e recebíveis em tempo real. Simples, neutro e eficiente.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto px-8 py-4 bg-zinc-900 text-white font-bold rounded-xl hover:shadow-xl hover:shadow-zinc-200 transition-all active:scale-95">
-              Começar Agora
-            </button>
+            <Link
+    href="/login" 
+    className="w-full sm:w-auto px-8 py-4 bg-zinc-900 text-white font-bold rounded-xl hover:bg-zinc-800 transition-all active:scale-95 shadow-lg shadow-zinc-200 text-center"
+  >
+    Começar Agora
+  </Link>
             <button className="w-full sm:w-auto px-8 py-4 bg-white border border-zinc-200 text-zinc-900 font-bold rounded-xl hover:bg-zinc-50 transition-all">
               Ver Demonstração
             </button>
