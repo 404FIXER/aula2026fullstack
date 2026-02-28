@@ -1,4 +1,4 @@
-export default function Usuarios(){
+export default function usuarios(){
     return(
         <>
         Cadastro de Usuarios

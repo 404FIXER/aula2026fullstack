@@ -18,9 +18,9 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors">Recursos</a>
             <a href="#dashboard" className="text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors">Dashboard</a>
-            <button className="px-5 py-2.5 bg-zinc-900 text-white text-sm font-semibold rounded-full hover:bg-zinc-800 transition-all active:scale-95">
+            <Link href = "/criarEventos" className="px-5 py-2.5 bg-zinc-900 text-white text-sm font-semibold rounded-full hover:bg-zinc-800 transition-all active:scale-95"> 
               Criar Evento
-            </button>
+            </Link>
           </div>
         </div>
       </nav>
