@@ -3,8 +3,8 @@ import { Usuario } from "../context/AuthContext";
 
 export class UsuarioMock{
     private static usuarioDB: Usuario[] = [
-        new Usuario(1, "Professor Samuel Matos", "000000000000",true),
-        new Usuario(2, "Gabriel Firmino", "1010101010", true)
+        new Usuario(1, "Professor Samuel Matos", "000000000000", "", "", true),
+        new Usuario(2, "Gabriel Firmino", "1010101010", "", "", true)
     ];
 
     static async listarTodos(): Promise<Usuario[]> {
@@ -24,6 +24,8 @@ export class UsuarioMock{
         else{
             this.usuarioDB[indexExistente].name = usuarios.name;
             this.usuarioDB[indexExistente].cpf = usuarios.cpf;
+            this.usuarioDB[indexExistente].email = usuarios.email;
+            this.usuarioDB[indexExistente].senha = usuarios.senha;
 
             console.log(`Usuario de ID ${usuarios.codigo} atualizado com sucesso!`);
         }

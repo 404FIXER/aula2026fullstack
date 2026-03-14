@@ -11,19 +11,21 @@ interface UsuarioFormProps {
 }
 export default function UsuarioForm({usuarioExistente}: UsuarioFormProps) {
     const [usuario, setUsuario] = useState<Usuario>(
-        usuarioExistente||new Usuario(0, '', '', true)
+        usuarioExistente||new Usuario(0, '', '', '','', true)
     );
 
     const router = useRouter();
 
     const isEdicao = !!usuarioExistente;
 
-    const handleChange = (campo: 'nome' | 'cpf', valor: string) => {
+    const handleChange = (campo: 'nome' | 'cpf' | 'email' | 'senha', valor: string) => {
         setUsuario((prev) =>
             new Usuario(
                 prev.codigo,
                 campo === 'nome' ? valor : prev.name,
                 campo === 'cpf' ? valor : prev.cpf,
+                campo === 'email' ? valor : prev.email,
+                campo === 'senha' ? valor : prev.senha,
                 prev.ativa
             )
         );
@@ -78,6 +80,30 @@ export default function UsuarioForm({usuarioExistente}: UsuarioFormProps) {
                                 required
                                 value={usuario.cpf}
                                 onChange={(e) => handleChange('cpf', e.target.value)}
+                                placeholder="000.000.000-00"
+                                className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-900 outline-none transition focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200"
+                            />
+                        </div>
+                         <div>
+                            <label className="mb-2 block text-sm font-medium text-zinc-700">
+                                EMAIL
+                            </label>
+                            <input
+                                required
+                                value={usuario.email}
+                                onChange={(e) => handleChange('email', e.target.value)}
+                                placeholder="000.000.000-00"
+                                className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-900 outline-none transition focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200"
+                            />
+                        </div>
+                         <div>
+                            <label className="mb-2 block text-sm font-medium text-zinc-700">
+                                SENHA
+                            </label>
+                            <input
+                                required
+                                value={usuario.senha}
+                                onChange={(e) => handleChange('senha', e.target.value)}
                                 placeholder="000.000.000-00"
                                 className="w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-900 outline-none transition focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200"
                             />

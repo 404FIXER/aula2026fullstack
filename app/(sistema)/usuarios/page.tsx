@@ -26,7 +26,7 @@ export default function usuarios() {
       setUsuarios((usuariosAtuais) =>
         usuariosAtuais.map((u) =>
           u.codigo === usuario.codigo
-            ? new Usuario(u.codigo, u.name, u.cpf, !u.ativa)
+            ? new Usuario(u.codigo, u.name, u.cpf, u.email, u.senha, !u.ativa)
             : u
         )
       );
@@ -101,6 +101,18 @@ export default function usuarios() {
                     </p>
                     <p className="text-sm text-zinc-800">{usuario.cpf}</p>
                   </div>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-zinc-400">
+                      EMAIL
+                    </p>
+                    <p className="text-sm text-zinc-800">{usuario.email}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-zinc-400">
+                      SENHA
+                    </p>
+                    <p className="text-sm text-zinc-800">{usuario.senha}</p>
+                  </div>
                 </div>
 
                 <div className="mt-5 flex flex-col gap-2 sm:flex-row">
@@ -144,6 +156,12 @@ export default function usuarios() {
                       CPF
                     </th>
                     <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
+                      EMAIL
+                    </th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
+                      SENHA
+                    </th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
                       Status
                     </th>
                     <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
@@ -163,6 +181,12 @@ export default function usuarios() {
                       </td>
                       <td className="px-6 py-4 text-sm text-zinc-700">
                         {usuario.cpf}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-zinc-700">
+                        {usuario.email}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-zinc-700">
+                        {usuario.senha}
                       </td>
                       <td className="px-6 py-4 text-sm">
                         <span
