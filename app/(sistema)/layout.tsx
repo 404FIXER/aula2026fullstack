@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
 
 export default function SistemaLayout({children}:{children:React.ReactNode}){
 
@@ -8,6 +9,7 @@ export default function SistemaLayout({children}:{children:React.ReactNode}){
                   
                   {/* Sidebar - Fixa ou ao lado */}
                   {/* <Sidebar /> */}
+                  <Sidebar></Sidebar>
         
                   {/* Área de Conteúdo: Cresce para empurrar o footer e organiza em coluna */}
                   <div className="flex flex-col flex-1">
